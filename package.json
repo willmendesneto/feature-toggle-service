@@ -1,0 +1,72 @@
+{
+  "name": "feature-toggle-service",
+  "version": "1.0.0",
+  "author": "Will Mendes <willmendesneto@gmail.com>",
+  "description": "The simplest solution for feature toggle in Javascript. Simple how it should be.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willmendesneto/feature-toggle-service.git"
+  },
+  "license": "MIT",
+  "main": "lib/feature-toggle-service.js",
+  "keywords": [
+    "feature-toggle-service",
+    "feature-toggle",
+    "feature",
+    "toggle",
+    "flag"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "bannerify": "Vekat/bannerify#feature-option",
+    "browserify": "^14.3.0",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^3.19.0",
+    "ghooks": "^2.0.0",
+    "install": "^0.10.1",
+    "karma": "^1.6.0",
+    "karma-browserify": "^5.1.1",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "mocha": "^3.3.0",
+    "phantomjs-prebuilt": "^2.1.14",
+    "uglify-js": "^3.0.10",
+    "validate-commit-msg": "^2.12.1",
+    "watchify": "^3.9.0"
+  },
+  "engines": {
+    "node": "6.10.2"
+  },
+  "scripts": {
+    "build": "npm run build-debug && npm run build-min",
+    "build-debug": "browserify src/feature-toggle-service.js -s FeatureToggleService -t [babelify] -p [bannerify --file .banner ] -o dist/feature-toggle-service.js",
+    "build-min": "uglifyjs dist/feature-toggle-service.js --comments '/!/' -m ie8=false -c ie8=false,unused=false -o dist/feature-toggle-service.min.js",
+    "build-watch": "watchify src/feature-toggle-service.js -s feature-toggle-service -t [babelify] -o dist/feature-toggle-service.js -v",
+    "test": "karma start --single-run",
+    "test-watch": "karma start",
+    "commit": "git-cz",
+    "pretest": "eslint ./src ./test",
+    "check-coverage": "cat ./coverage/report-lcov/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
+    "prepublish": "babel src --out-dir lib",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "! git --no-pager grep --cached -nE '^\\s*?(describe|it).only' -- ./test/*.js",
+      "post-merge": "git --no-pager diff-tree -r --name-only --no-commit-id HEAD@{1} HEAD | grep -q 'package.json' && npm install",
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "helpMessage": "If you are unsure on how to structure your commit message, execute 'npm run commit' for a step-by-step."
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}

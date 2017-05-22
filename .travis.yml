@@ -1,0 +1,14 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run test
+  - npm run build
+after_success:
+  - npm run check-coverage
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

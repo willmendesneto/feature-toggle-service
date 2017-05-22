@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature Toggle Service | Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Feature toggle</h1>
+
+    <p>Please open your Devtools after load this page and look your logs for more details.</p>
+    <!-- 2. Include library -->
+    <script src="../dist/feature-toggle-service.min.js"></script>
+
+    <!-- 3. Instantiate FeatureToggleService in your component -->
+    <script>
+    var featureToggleService = new FeatureToggleService();
+
+    featureToggleService.setConfigurationObject({
+      enableDummyFeature: true,
+      enableAnotherDummyFeature: false,
+    });
+
+    console.log('================================================');
+    console.log('FeatureToggleService: isOn()');
+    console.log('enableDummyFeature', featureToggleService.isOn('enableDummyFeature'));
+    console.log('enableAnotherDummyFeature', featureToggleService.isOn('enableAnotherDummyFeature'));
+    console.log('enableUndefinedDummyFeature', featureToggleService.isOn('enableUndefinedDummyFeature'));
+    console.log('================================================');
+    console.log('FeatureToggleService: isOff()');
+    console.log('enableDummyFeature', featureToggleService.isOff('enableDummyFeature'));
+    console.log('enableAnotherDummyFeature', featureToggleService.isOff('enableAnotherDummyFeature'));
+    console.log('enableUndefinedDummyFeature', featureToggleService.isOff('enableUndefinedDummyFeature'));
+    console.log('================================================');
+    </script>
+</body>
+</html>
