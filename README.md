@@ -1,7 +1,7 @@
-# NGX Feature Toggle
+# Feature Toggle Service
 
 [![npm version](https://badge.fury.io/js/feature-toggle-service.svg)](http://badge.fury.io/js/feature-toggle-service) [![npm downloads](https://img.shields.io/npm/dm/feature-toggle-service.svg)](https://npmjs.org/feature-toggle-service)
-[![MIT License][license-badge]][LICENSE]
+[![MIT License](https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat-square)](LICENSE)
 
 [![Build Status](https://travis-ci.org/willmendesneto/feature-toggle-service.svg?branch=master)](https://travis-ci.org/willmendesneto/feature-toggle-service)
 [![Coverage Status](https://coveralls.io/repos/willmendesneto/feature-toggle-service/badge.svg?branch=master)](https://coveralls.io/r/willmendesneto/feature-toggle-service?branch=master)
@@ -96,7 +96,3 @@ Checks if the feature toggle configuration does not have the string key value wi
 + <https://plus.google.com/+WilsonMendes>
 + <https://twitter.com/willmendesneto>
 + <http://github.com/willmendesneto>
-
-
-[license-badge]: https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat-square
-[license]: https://github.com/willmendesneto/nodebots-workshop/blob/master/LICENSE
