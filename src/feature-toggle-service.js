@@ -1,5 +1,14 @@
 let settings = {};
+let instance = null;
+
 class FeatureToggleService {
+  constructor() {
+    if(!instance){
+      instance = this;
+    }
+    return instance;
+  }
+
   isOn(key) {
     return !!settings[key];
   }
