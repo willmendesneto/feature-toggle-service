@@ -1,6 +1,6 @@
 {
   "name": "feature-toggle-service",
-  "version": "2.0.0",
+  "version": "1.2.0",
   "author": "Will Mendes <willmendesneto@gmail.com>",
   "description": "The simplest solution for feature toggle in Javascript. Simple how it should be.",
   "repository": {
@@ -34,12 +34,14 @@
     "babel-runtime": "^6.23.0",
     "commitizen": "^2.9.6",
     "conventional-changelog-cli": "^1.3.1",
+    "coveralls": "^2.13.1",
     "cz-conventional-changelog": "^2.0.0",
     "ghooks": "^2.0.0",
     "install": "^0.10.1",
     "mocha": "^3.4.2",
     "mustache": "^2.3.0",
     "nyc": "^11.0.2",
+    "semantic-release": "^6.3.6",
     "ts-node": "^3.0.6",
     "tslint": "^5.4.3",
     "typescript": "^2.3.4",
