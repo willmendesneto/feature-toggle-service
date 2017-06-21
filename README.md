@@ -55,8 +55,12 @@ $ yarn install
 Via Chocolatey:
 
 ```bash
-$ choco install nodejs.install -version 6.9.4
+$ choco install nodejs.install -version 6.10.2
 ```
+
+## Demo
+
+Try out the [demo](https://github.com/willmendesneto/feature-toggle-service/blob/master/demo/index.html)!
 
 
 ## Run the app
