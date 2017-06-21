@@ -73,6 +73,12 @@ $ npm test # run the tests
 ```
 
 
+## Run the build
+
+```bash
+$ npm run build # run the tests
+```
+
 ## `FeatureToggleService`
 
 This service exposes a few different methods with which you can interact with feature toggle service.
