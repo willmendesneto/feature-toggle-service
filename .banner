@@ -1,5 +1,5 @@
 /*!
- * feature-toggle-service.js v<%= pkg.version %>
+ * feature-toggle-service.js v{{ pkg.version }}
  * https://willmendesneto.github.io/feature-toggle-service.js
  *
  * Licensed MIT © Will Mendes

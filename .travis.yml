@@ -4,7 +4,7 @@ cache:
   directories:
     - node_modules
 script:
-  - npm run test
+  - npm run test -- --reporter=dot
   - npm run build
 after_success:
   - npm run check-coverage

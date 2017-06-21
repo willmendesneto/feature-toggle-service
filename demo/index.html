@@ -10,27 +10,25 @@
 
     <p>Please open your Devtools after load this page and look your logs for more details.</p>
     <!-- 2. Include library -->
-    <script src="../dist/feature-toggle-service.min.js"></script>
+    <script src="../lib/feature-toggle-service.min.js"></script>
 
     <!-- 3. Instantiate FeatureToggleService in your component -->
     <script>
-    var featureToggleService = new FeatureToggleService();
-
-    featureToggleService.setConfigurationObject({
+    FeatureToggleService.setConfigurationObject({
       enableDummyFeature: true,
       enableAnotherDummyFeature: false,
     });
 
     console.log('================================================');
     console.log('FeatureToggleService: isOn()');
-    console.log('enableDummyFeature', featureToggleService.isOn('enableDummyFeature'));
-    console.log('enableAnotherDummyFeature', featureToggleService.isOn('enableAnotherDummyFeature'));
-    console.log('enableUndefinedDummyFeature', featureToggleService.isOn('enableUndefinedDummyFeature'));
+    console.log('enableDummyFeature', FeatureToggleService.isOn('enableDummyFeature'));
+    console.log('enableAnotherDummyFeature', FeatureToggleService.isOn('enableAnotherDummyFeature'));
+    console.log('enableUndefinedDummyFeature', FeatureToggleService.isOn('enableUndefinedDummyFeature'));
     console.log('================================================');
     console.log('FeatureToggleService: isOff()');
-    console.log('enableDummyFeature', featureToggleService.isOff('enableDummyFeature'));
-    console.log('enableAnotherDummyFeature', featureToggleService.isOff('enableAnotherDummyFeature'));
-    console.log('enableUndefinedDummyFeature', featureToggleService.isOff('enableUndefinedDummyFeature'));
+    console.log('enableDummyFeature', FeatureToggleService.isOff('enableDummyFeature'));
+    console.log('enableAnotherDummyFeature', FeatureToggleService.isOff('enableAnotherDummyFeature'));
+    console.log('enableUndefinedDummyFeature', FeatureToggleService.isOff('enableUndefinedDummyFeature'));
     console.log('================================================');
     </script>
 </body>
