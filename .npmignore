@@ -6,3 +6,4 @@
 /karma.conf.js
 /src
 /coverage
+/.nyc_output
