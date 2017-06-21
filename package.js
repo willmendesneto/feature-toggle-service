@@ -3,7 +3,7 @@
 Package.describe({
   name: "willmendesneto:feature-toggle-service",
   summary: "The simplest solution for feature toggle in Javascript. Simple how it should be.",
-  version: "1.2.0",
+  version: "2.0.1",
   git: "https://github.com/willmendesneto/feature-toggle-service.js"
 });
 
