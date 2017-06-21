@@ -3,6 +3,8 @@ language: node_js
 cache:
   directories:
     - node_modules
+before_install:
+  - npm set progress=false
 script:
   - npm run test -- --reporter=dot
   - npm run build
