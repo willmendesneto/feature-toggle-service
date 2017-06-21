@@ -1,5 +1,5 @@
 /*global describe, before, it*/
-import { setConfigurationObject, isOff, isOn } from '../dist/feature-toggle-service';
+import { setConfigurationObject, isOff, isOn } from '../lib/feature-toggle-service';
 import assert from 'assert';
 
 describe('FeatureToggleService', () => {
