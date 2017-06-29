@@ -1,5 +1,7 @@
 # Feature Toggle Service
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/willmendesneto/feature-toggle-service.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/feature-toggle-service.svg)](http://badge.fury.io/js/feature-toggle-service) [![npm downloads](https://img.shields.io/npm/dm/feature-toggle-service.svg)](https://npmjs.org/feature-toggle-service)
 [![MIT License](https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat-square)](LICENSE)
 
