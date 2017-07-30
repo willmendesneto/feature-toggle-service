@@ -54,7 +54,7 @@
   "scripts": {
     "compile": "tsc",
     "build": "npm run compile && babel lib --out-dir lib && npm run build-min && npm run generate-banner",
-    "build-min": "uglifyjs lib/feature-toggle-service.js --comments '/!/' -m ie8=false -c ie8=false,unused=false -o lib/feature-toggle-service.min.js",
+    "build-min": "uglifyjs lib/feature-toggle-service.js --comments '/!/' -m --screw-ie8=true -c unused=false -o lib/feature-toggle-service.min.js",
     "commit": "git-cz",
     "pretest": "tslint src",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",

@@ -1,19 +1,18 @@
 language: node_js
 cache:
+  yarn: true
   directories:
     - node_modules
-notifications:
-  email: false
+os:
+  - linux
+  - osx
 before_install:
-  - npm set progress=false
-before_script:
-  - npm prune
+  - npm install -g --no-progress npm@latest yarn
+install:
+  - yarn install --no-progress
 script:
-  - npm run test -- --reporter=dot
-  - npm run build
+  - yarn run test -- --reporter=dot --check-leaks
+  - yarn run build
 after_success:
-  - npm run check-coverage
-  - npm run semantic-release
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  - yarn run check-coverage
+  - yarn run semantic-release
