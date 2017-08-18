@@ -46,7 +46,7 @@
     "typings": "^2.1.1",
     "uglify-js": "^3.0.10",
     "validate-commit-msg": "^2.12.1",
-    "semantic-release": "^6.3.6"
+    "semantic-release": "^7.0.2"
   },
   "engines": {
     "node": ">=6.10.2"
