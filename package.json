@@ -37,7 +37,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "ghooks": "^2.0.0",
     "install": "^0.10.1",
-    "mocha": "^3.4.2",
+    "mocha": "^4.0.0",
     "mustache": "^2.3.0",
     "nyc": "^11.0.2",
     "ts-node": "^3.0.6",
