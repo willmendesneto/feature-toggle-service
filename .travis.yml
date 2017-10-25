@@ -15,4 +15,3 @@ script:
   - yarn run build
 after_success:
   - yarn run check-coverage
-  - yarn run semantic-release
