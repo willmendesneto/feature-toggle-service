@@ -39,8 +39,7 @@ Assuming that you are using `nvm`, please run the commands inside this folder:
 ```bash
 $ nvm install $(cat .nvmrc); # install required nodejs version
 $ nvm use $(cat .nvmrc); # use nodejs version
-$ npm install -g yarn@0.23.4
-$ yarn install
+$ npm install
 ```
 
 In Windows, please install NodeJS using one of these options:
@@ -50,8 +49,7 @@ Via `NVM Windows` package: Dowload via [this link](https://github.com/coreybutle
 ```bash
 $ nvm install $(cat .nvmrc); # install required nodejs version
 $ nvm use $(cat .nvmrc); # use nodejs version
-$ npm install -g yarn@0.23.4
-$ yarn install
+$ npm install
 ```
 
 Via Chocolatey:

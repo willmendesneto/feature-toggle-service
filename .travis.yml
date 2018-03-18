@@ -6,12 +6,8 @@ cache:
 os:
   - linux
   - osx
-before_install:
-  - npm install -g --no-progress npm@latest yarn
-install:
-  - yarn install --no-progress
 script:
-  - yarn run test -- --reporter=dot --check-leaks
-  - yarn run build
+  - npm run test -- --reporter=dot --check-leaks
+  - npm run build
 after_success:
-  - yarn run check-coverage
+  - npm run check-coverage
