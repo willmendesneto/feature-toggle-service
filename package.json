@@ -1,6 +1,6 @@
 {
   "name": "feature-toggle-service",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Will Mendes <willmendesneto@gmail.com>",
   "description": "The simplest solution for feature toggle in Javascript. Simple how it should be.",
   "repository": {
