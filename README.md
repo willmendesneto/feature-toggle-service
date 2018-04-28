@@ -95,10 +95,6 @@ Adds the  feature toggle configuration in your application. This information wil
 
 Checks if the feature toggle configuration has the string key value with `true` value.
 
-### `featureToggleService.isOff(key)`
-
-Checks if the feature toggle configuration does not have the string key value with `true` value.
-
 
 ## Author
 
