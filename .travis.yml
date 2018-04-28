@@ -9,5 +9,6 @@ os:
 script:
   - npm run test -- --reporter=dot --check-leaks
   - npm run build
+  - npm run bundlesize
 after_success:
   - npm run check-coverage

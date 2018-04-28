@@ -32,6 +32,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
     "babel-runtime": "^6.23.0",
+    "bundlesize": "^0.17.0",
     "commitizen": "^2.9.6",
     "conventional-changelog-cli": "^1.3.1",
     "cz-conventional-changelog": "^2.0.0",
@@ -58,7 +59,8 @@
     "test": "npm run compile && NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha ./test/*.spec.js --require ./test/setup.js",
     "check-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
     "prepublish": "npm run build",
-    "generate-banner": "node generate-banner.js"
+    "generate-banner": "node generate-banner.js",
+    "bundlesize": "bundlesize"
   },
   "config": {
     "ghooks": {
@@ -72,5 +74,11 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./lib/feature-toggle-service.min.js",
+      "maxSize": "333B"
+    }
+  ]
 }
