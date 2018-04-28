@@ -1,5 +1,5 @@
 /*global describe, before, it*/
-import { setConfigurationObject, isOff, isOn } from '../lib/feature-toggle-service';
+import { setConfigurationObject, isOn } from '../lib/feature-toggle-service';
 import assert from 'assert';
 
 describe('FeatureToggleService', () => {
@@ -26,23 +26,5 @@ describe('FeatureToggleService', () => {
 
   it('should return true if given value is true', () => {
     assert.equal(isOn('enableSecondText'), true);
-  });
-
-
-  it('should return true if value is undefined or null', () => {
-    assert.equal(isOff(undefined), true);
-    assert.equal(isOff(null), true);
-  });
-
-  it('should return true if value was not added', () => {
-    assert.equal(isOff('nonAddedValue'), true);
-  });
-
-  it('should return true if given value is true', () => {
-    assert.equal(isOff('enableFirstText'), true);
-  });
-
-  it('should return false if given value is false', () => {
-    assert.equal(isOff('enableSecondText'), false);
   });
 });
