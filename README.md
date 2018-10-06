@@ -12,21 +12,19 @@
 [![NPM](https://nodei.co/npm/feature-toggle-service.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/feature-toggle-service)
 [![NPM](https://nodei.co/npm-dl/feature-toggle-service.png?height=3&months=3)](https://npmjs.org/feature-toggle-service)
 
-
 The simplest solution for [feature toggles](http://martinfowler.com/bliki/FeatureToggle.html) in Javascript. Simple how it should be.
-
 
 ## Why Feature toggle?
 
 > This is a common concept, but why use this directive instead solve it via server-side rendering?
 
 The idea of this directive is make this process transparent and easier. So the main point is integrate this directive with other tooling process, such as:
+
 - Server-side rendering;
 - Progressive rendering;
 - Any other that yoy like :)
 
 You can integrate with WebSockets or handling this in a EventSourcing architecture. It's totally transparent for you and you can integrate easier in your application.
-
 
 ## Setup and installation
 
@@ -62,20 +60,17 @@ $ choco install nodejs.install -version 6.10.2
 
 Try out the [demo](https://github.com/willmendesneto/feature-toggle-service/blob/master/demo/index.html)!
 
-
 ## Run the app
 
 ```bash
 $ npm start
 ```
 
-
 ## Run the tests
 
 ```bash
 $ npm test # run the tests
 ```
-
 
 ## Run the build
 
@@ -87,18 +82,18 @@ $ npm run build # run the tests
 
 This service exposes a few different methods with which you can interact with feature toggle service.
 
-### `featureToggleService.setConfigurationObject(obj)`
+### `featureToggleService.set(obj)`
 
-Adds the  feature toggle configuration in your application. This information will be private and checked via `featureToggleService.isOn(key)` and `featureToggleService.isOff(key)` methods.
+Adds the feature toggle configuration in your application. This information will be private and checked via `featureToggleService.isOn(key)` method.
 
 ### `featureToggleService.isOn(key)`
 
-Checks if the feature toggle configuration has the string key value with `true` value.
-
+Checks if the feature toggle configuration has the string key value with `true` value. For bundle reasons if you want to check if the feature toggle is turned off, please use `!featureToggleService.isOn(key)`
 
 ## Author
 
 **Wilson Mendes (willmendesneto)**
-+ <https://plus.google.com/+WilsonMendes>
-+ <https://twitter.com/willmendesneto>
-+ <http://github.com/willmendesneto>
+
+- <https://plus.google.com/+WilsonMendes>
+- <https://twitter.com/willmendesneto>
+- <http://github.com/willmendesneto>
