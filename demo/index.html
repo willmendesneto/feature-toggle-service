@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Feature Toggle Service | Example</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Feature Toggle Service | Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <h1>Feature toggle</h1>
+  <h1>Feature toggle</h1>
 
-    <p>Please open your Devtools after load this page and look your logs for more details.</p>
-    <!-- 2. Include library -->
-    <script src="../lib/feature-toggle-service.min.js"></script>
+  <p>Please open your Devtools after load this page and look your logs for more details.</p>
+  <!-- 2. Include library -->
+  <script src="../lib/feature-toggle-service.min.js"></script>
 
-    <!-- 3. Instantiate FeatureToggleService in your component -->
-    <script>
-    FeatureToggleService.setConfigurationObject({
+  <!-- 3. Instantiate FeatureToggleService in your component -->
+  <script>
+    FeatureToggleService.set({
       enableDummyFeature: true,
       enableAnotherDummyFeature: false,
     });
@@ -25,6 +27,7 @@
     console.log('enableAnotherDummyFeature', FeatureToggleService.isOn('enableAnotherDummyFeature'));
     console.log('enableUndefinedDummyFeature', FeatureToggleService.isOn('enableUndefinedDummyFeature'));
     console.log('================================================');
-    </script>
+  </script>
 </body>
+
 </html>

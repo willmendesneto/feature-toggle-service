@@ -1,13 +1,12 @@
 /*global describe, before, it*/
-import { setConfigurationObject, isOn } from '../lib/feature-toggle-service';
+import { set, isOn } from '../lib/feature-toggle-service';
 import assert from 'assert';
 
 describe('FeatureToggleService', () => {
-
   before(() => {
-    setConfigurationObject({
+    set({
       enableFirstText: false,
-      enableSecondText: true
+      enableSecondText: true,
     });
   });
 

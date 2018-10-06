@@ -4,11 +4,8 @@ const isOn = (key: string): boolean => {
   return !!settings[key];
 };
 
-const setConfigurationObject = (obj: any): void => {
+const set = (obj: any): void => {
   settings = obj;
-}
-
-export {
-  isOn,
-  setConfigurationObject
 };
+
+export { isOn, set };
