@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+## [4.0.0][] - 2018-10-07
+
 ### Added
 
 - Adding `CHANGELOG.md` on repository
@@ -21,3 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 - Removing `setConfig()` to use `set()` method instead
+
+
+[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v4.0.0
