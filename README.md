@@ -94,6 +94,5 @@ Checks if the feature toggle configuration has the string key value with `true` 
 
 **Wilson Mendes (willmendesneto)**
 
-- <https://plus.google.com/+WilsonMendes>
 - <https://twitter.com/willmendesneto>
 - <http://github.com/willmendesneto>
