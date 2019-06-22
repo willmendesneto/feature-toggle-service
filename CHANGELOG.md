@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+## [4.1.0][] - 2019-06-22
+
 ### Added
 
 - Added debug mode for `isOn` method
@@ -40,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removing `setConfig()` to use `set()` method instead
 
 
-[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.1...HEAD
+[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v4.0.0
