@@ -1,8 +1,10 @@
 const version = '4.0.1';
 
-let settings: {
-  [v: string]: { [k: string]: boolean }
-} = { [version]: {} };
+export type FeatureToggleServiceConfig = {
+  [k: string]: boolean,
+};
+
+let settings: { [v: string]: FeatureToggleServiceConfig } = { [version]: {} };
 
 /**
  * Checks if Feature toggle/flag exists and it's on.
@@ -15,8 +17,13 @@ let settings: {
  */
 const isOn = (key: string, debug: boolean): boolean => {
   if (debug === true) {
+    // tslint:disable-next-line
     console.log(`
-[DEBUG] Execution Time in milliseconds: ${Date.now()} version: "${version}" key: "${key}" settings: ${JSON.stringify(settings)}
+[DEBUG] Execution Time in milliseconds: ${
+      Date.now()
+      } version: "${version}" key: "${key}" settings: ${
+      JSON.stringify(settings)
+      }
 `);
   }
   return !!settings[version][key];
@@ -30,7 +37,7 @@ const isOn = (key: string, debug: boolean): boolean => {
  * @returns void
  *
  */
-const set = (obj: { [k: string]: boolean }): void => {
+const set = (obj: FeatureToggleServiceConfig): void => {
   settings[version] = obj;
 };
 

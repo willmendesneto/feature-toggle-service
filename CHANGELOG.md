@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Added debug mode for `isOn` method
+- Exporting type for `FeatureToggleServiceConfig`
 
 ## [4.0.1][] - 2019-06-22
 
