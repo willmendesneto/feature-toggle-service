@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+## [4.0.1][] - 2019-06-22
+
 ### Updated
 
 - Updated `package-lock.json` file
@@ -33,5 +35,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Removing `setConfig()` to use `set()` method instead
 
 
-[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.1...HEAD
+[4.0.1]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v4.0.0
