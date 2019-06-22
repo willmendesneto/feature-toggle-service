@@ -27,6 +27,11 @@
     console.log('enableAnotherDummyFeature', FeatureToggleService.isOn('enableAnotherDummyFeature'));
     console.log('enableUndefinedDummyFeature', FeatureToggleService.isOn('enableUndefinedDummyFeature'));
     console.log('================================================');
+    console.log('[DEBUG] FeatureToggleService: isOn()');
+    console.log('enableDummyFeature', FeatureToggleService.isOn('enableDummyFeature', true));
+    console.log('enableAnotherDummyFeature', FeatureToggleService.isOn('enableAnotherDummyFeature', true));
+    console.log('enableUndefinedDummyFeature', FeatureToggleService.isOn('enableUndefinedDummyFeature', true));
+    console.log('================================================');
   </script>
 </body>
 

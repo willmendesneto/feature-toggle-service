@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+### Added
+
+- Added debug mode for `isOn` method
+
 ## [4.0.1][] - 2019-06-22
 
 ### Updated

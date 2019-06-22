@@ -86,9 +86,9 @@ This service exposes a few different methods with which you can interact with fe
 
 Adds the feature toggle configuration in your application. This information will be private and checked via `featureToggleService.isOn(key)` method.
 
-### `featureToggleService.isOn(key)`
+### `featureToggleService.isOn(key, debug)`
 
-Checks if the feature toggle configuration has the string key value with `true` value. For bundle reasons if you want to check if the feature toggle is turned off, please use `!featureToggleService.isOn(key)`
+Checks if the feature toggle configuration has the string key value with `true` value. For bundle reasons if you want to check if the feature toggle is turned off, please use `!featureToggleService.isOn(key)`. When `debug` param is passed as `true` and it's not `NODE_ENV` is not set to prod, it prints configuration, version and settings for debug purposes
 
 ## Author
 
