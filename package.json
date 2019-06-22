@@ -63,7 +63,7 @@
   "bundlesize": [
     {
       "path": "./lib/feature-toggle-service.min.js",
-      "maxSize": "450B"
+      "maxSize": "449B"
     }
   ]
 }

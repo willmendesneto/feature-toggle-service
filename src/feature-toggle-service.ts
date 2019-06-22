@@ -15,8 +15,8 @@ let settings: { [v: string]: FeatureToggleServiceConfig } = { [version]: {} };
  * @returns Boolean
  *
  */
-const isOn = (key: string, debug: boolean): boolean => {
-  if (debug === true) {
+const isOn = (key: string, debug?: boolean): boolean => {
+  if (!!debug) {
     // tslint:disable-next-line
     console.log(`
 [DEBUG] Execution Time in milliseconds: ${
@@ -25,6 +25,7 @@ const isOn = (key: string, debug: boolean): boolean => {
       JSON.stringify(settings)
       }
 `);
+
   }
   return !!settings[version][key];
 };
