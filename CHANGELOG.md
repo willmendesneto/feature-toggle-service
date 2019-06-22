@@ -30,6 +30,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added method description for Editor/IDE integration
 
+<img width="701" alt="Added method description for Editor/IDE integration" src="https://user-images.githubusercontent.com/1252570/59961226-53d91480-9518-11e9-8f3f-acbaf952e955.png">
+
+
 ## [4.0.0][] - 2018-10-07
 
 ### Added
