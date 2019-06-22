@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+### Added
+
+- Added method description for Editor/IDE integration
+
 ## [4.0.0][] - 2018-10-07
 
 ### Added

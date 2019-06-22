@@ -7,6 +7,6 @@ Package.describe({
   git: "https://github.com/willmendesneto/feature-toggle-service.js"
 });
 
-Package.onUse(function(api) {
-  api.addFiles("dist/feature-toggle-service.js", "client");
+Package.onUse(function (api) {
+  api.addFiles("lib/feature-toggle-service.js", "client");
 });

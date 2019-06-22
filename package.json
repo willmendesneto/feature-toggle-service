@@ -51,7 +51,7 @@
     "compile": "tsc",
     "build": "npm run compile && babel lib --out-dir lib && npm run build-min && npm run generate-banner",
     "build-min": "uglifyjs lib/feature-toggle-service.js --comments '/!/' -m --screw-ie8=true -c unused=false -o lib/feature-toggle-service.min.js",
-    "pretest": "tslint src",
+    "pretest": "tslint --project tsconfig.json",
     "test": "npm run compile && NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha ./test/*.spec.js --require ./test/setup.js",
     "check-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
     "prepublish": "npm run build",
