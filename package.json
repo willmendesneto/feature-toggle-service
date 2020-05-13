@@ -7,9 +7,15 @@
     "type": "git",
     "url": "https://github.com/willmendesneto/feature-toggle-service.git"
   },
+  "sideEffects": false,
   "license": "MIT",
-  "main": "lib/feature-toggle-service.js",
-  "types": "lib/feature-toggle-service.d.ts",
+  "browser": "dist/umd/feature-toggle-service.js",
+  "jsnext:main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "es2015": "dist/cjs/index.js",
+  "cjs": "dist/cjs/index.js",
+  "types": "dist/umd/index.d.ts",
   "keywords": [
     "feature-toggle-service",
     "feature-toggle",
@@ -17,53 +23,98 @@
     "toggle",
     "flag"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^1.12.0"
+  },
   "devDependencies": {
-    "@types/node": "^13.1.0",
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^8.0.3",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "babel-runtime": "^6.23.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^14.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
     "bundlesize": "^0.18.0",
     "changelog-verify": "^1.1.0",
-    "mocha": "^7.0.1",
-    "mustache": "^4.0.0",
-    "nyc": "^15.0.1",
-    "ts-node": "^8.0.3",
-    "tslint": "^5.4.3",
-    "typescript": "^3.1.1",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-compat": "^3.3.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "fs-extra": "^9.0.0",
+    "glob": "^7.1.4",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "jsdom": "^16.2.2",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5",
+    "rollup": "^2.9.1",
+    "ts-jest": "^25.5.1",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.2",
     "typings": "^2.1.1",
-    "uglify-js": "^3.0.10",
+    "uglify-js": "^3.9.2",
+    "usertiming": "^0.1.8",
     "version-changelog": "^3.1.0"
   },
   "engines": {
-    "node": ">=6.10.2"
+    "node": ">=12"
   },
   "scripts": {
     "compile": "tsc",
-    "build": "npm run compile && babel lib --out-dir lib && npm run build-min && npm run generate-banner",
-    "build-min": "uglifyjs lib/feature-toggle-service.js --comments '/!/' -m --screw-ie8=true -c unused=false -o lib/feature-toggle-service.min.js",
-    "pretest": "tslint --project tsconfig.json",
-    "test": "npm run compile && NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha ./test/*.spec.js --require ./test/setup.js",
+    "clean": "rm -rf ./dist ./.jest ./coverage ./lib",
+    "build": "yarn build:es2015 && yarn build:cjs && yarn build:esm && yarn build:umd",
+    "build:umd": "rollup dist/esm/index.js --format umd --name PerfMarks -o dist/umd/feature-toggle-service.js && yarn build:umd:min",
+    "build:umd:min": "uglifyjs --compress --mangle --screw-ie8 --comments -o dist/umd/feature-toggle-service.min.js -- dist/umd/feature-toggle-service.js && gzip dist/umd/feature-toggle-service.min.js -c > dist/umd/feature-toggle-service.min.js.gz",
+    "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
+    "build:esm": "tsc --module esnext --target es5 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "test": "jest",
+    "pretest:ci": "yarn lint",
+    "test:ci": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "check-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
-    "prepublish": "npm run build",
-    "generate-banner": "node generate-banner.js",
     "bundlesize": "bundlesize",
+    "lint": "eslint './src/**/*.[tj]s'",
+    "lint:fix": "prettier --no-editorconfig --write",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "bundlesize": [
     {
-      "path": "./lib/feature-toggle-service.min.js",
-      "maxSize": "449B"
+      "path": "./dist/esm/index.js",
+      "maxSize": "62B"
+    },
+    {
+      "path": "./dist/es2015/index.js",
+      "maxSize": "62B"
+    },
+    {
+      "path": "./dist/cjs/index.js",
+      "maxSize": "156B"
+    },
+    {
+      "path": "./dist/umd/feature-toggle-service.js",
+      "maxSize": "644B"
+    },
+    {
+      "path": "./dist/umd/feature-toggle-service.min.js",
+      "maxSize": "353B"
     }
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --no-editorconfig --write",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    "last 1 chrome versions",
+    "last 1 edge versions",
+    "last 1 firefox versions",
+    "last 1 safari versions",
+    "last 1 and_chr versions",
+    "last 1 ios_saf versions",
+    "ie 11"
   ]
 }

@@ -1,10 +1,10 @@
-const version = '4.0.1';
+const version = '4.1.1';
 
 export type FeatureToggleServiceConfig = {
-  [k: string]: boolean,
+  [k: string]: boolean;
 };
 
-let settings: { [v: string]: FeatureToggleServiceConfig } = { [version]: {} };
+const settings: { [v: string]: FeatureToggleServiceConfig } = { [version]: {} };
 
 /**
  * Checks if Feature toggle/flag exists and it's on.
@@ -15,19 +15,16 @@ let settings: { [v: string]: FeatureToggleServiceConfig } = { [version]: {} };
  * @returns Boolean
  *
  */
-const isOn = (key: string, debug?: boolean): boolean => {
+const isOn = (key: string | null | undefined, debug?: boolean): boolean => {
   if (!!debug) {
     // tslint:disable-next-line
     console.log(`
-[DEBUG] Execution Time in milliseconds: ${
-      Date.now()
-      } version: "${version}" key: "${key}" settings: ${
-      JSON.stringify(settings)
-      }
+[DEBUG] Execution Time in milliseconds: ${Date.now()} version: "${version}" key: "${key}" settings: ${JSON.stringify(
+      settings,
+    )}
 `);
-
   }
-  return !!settings[version][key];
+  return typeof key === 'string' && !!settings[version][key];
 };
 
 /**

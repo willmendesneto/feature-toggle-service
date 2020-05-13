@@ -32,7 +32,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <img width="701" alt="Added method description for Editor/IDE integration" src="https://user-images.githubusercontent.com/1252570/59961226-53d91480-9518-11e9-8f3f-acbaf952e955.png">
 
-
 ## [4.0.0][] - 2018-10-07
 
 ### Added
@@ -50,8 +49,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Removing `setConfig()` to use `set()` method instead
 
-
-[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.1.1...HEAD
+[unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.1.1...HEAD
 [4.1.1]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/willmendesneto/feature-toggle-service/compare/v4.0.0...v4.0.1

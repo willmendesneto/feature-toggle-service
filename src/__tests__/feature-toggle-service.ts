@@ -1,9 +1,7 @@
-/*global describe, before, it*/
-import { set, isOn } from '../lib/feature-toggle-service';
-import assert from 'assert';
+import { set, isOn } from '../feature-toggle-service';
 
 describe('FeatureToggleService', () => {
-  before(() => {
+  beforeEach(() => {
     set({
       enableFirstText: false,
       enableSecondText: true,
@@ -11,19 +9,19 @@ describe('FeatureToggleService', () => {
   });
 
   it('should return false if value is undefined or null', () => {
-    assert.equal(isOn(undefined), false);
-    assert.equal(isOn(null), false);
+    expect(isOn(undefined)).toEqual(false);
+    expect(isOn(null)).toEqual(false);
   });
 
   it('should return false if value was not added', () => {
-    assert.equal(isOn('nonAddedValue'), false);
+    expect(isOn('nonAddedValue')).toEqual(false);
   });
 
   it('should return false if given value is false', () => {
-    assert.equal(isOn('enableFirstText'), false);
+    expect(isOn('enableFirstText')).toEqual(false);
   });
 
   it('should return true if given value is true', () => {
-    assert.equal(isOn('enableSecondText'), true);
+    expect(isOn('enableSecondText')).toEqual(true);
   });
 });
