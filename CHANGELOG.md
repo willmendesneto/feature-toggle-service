@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+### Updated
+
+- Upgrading devDependencies to the latest version
+- Upgrading `tslib` to `v1.12.0`
+- Upgrading `nodejs` to `v12.16.2`
+- Upgrading `engines` in `package.json` to accept NodeJS versions only greater or equal than `>=12`
+- Using Jest as test framework
+
+### Added
+
+- Adding different bundles for package
+  - ESM
+  - ES2015
+  - UMD
+  - CJS
+
 ## [4.1.1][] - 2019-06-22
 
 ### Fixed
