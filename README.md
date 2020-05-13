@@ -13,7 +13,6 @@
 [![NPM](https://nodei.co/npm/feature-toggle-service.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/feature-toggle-service)
 [![NPM](https://nodei.co/npm-dl/feature-toggle-service.png?height=3&months=3)](https://npmjs.org/feature-toggle-service)
 
-![Perf marks](./images/feature-toggle-service.png)
 The simplest solution for [feature toggles](http://martinfowler.com/bliki/FeatureToggle.html) in Javascript. Simple how it should be.
 
 ## Why Feature toggle?
