@@ -90,11 +90,11 @@
     },
     {
       "path": "./dist/umd/feature-toggle-service.js",
-      "maxSize": "649B"
+      "maxSize": "661B"
     },
     {
       "path": "./dist/umd/feature-toggle-service.min.js",
-      "maxSize": "361B"
+      "maxSize": "371B"
     }
   ],
   "husky": {

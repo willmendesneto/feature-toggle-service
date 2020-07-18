@@ -86,4 +86,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v5.0.0...HEAD
 [5.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v5.0.0
 [unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v5.0.1...HEAD
-[5.0.1]: https://github.com/willmendesneto/feature-toggle-service/tree/v5.0.1

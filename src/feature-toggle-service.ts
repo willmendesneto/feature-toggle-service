@@ -1,4 +1,4 @@
-const version = '5.0.1';
+const version = '6.0.0';
 
 export type FeatureToggleServiceConfig = {
   [k: string]: boolean;
