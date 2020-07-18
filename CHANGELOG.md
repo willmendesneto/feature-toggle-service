@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+## [6.0.0][] - 2020-07-18
+
 ### Fixed
 
 - Updating bundle values for `yarn bundlesize` command
@@ -86,3 +88,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v5.0.0...HEAD
 [5.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v5.0.0
 [unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v5.0.1...HEAD
+
+
+[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v6.0.0...HEAD
+[6.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v6.0.0
