@@ -24,4 +24,23 @@ describe('FeatureToggleService', () => {
   it('should return true if given value is true', () => {
     expect(isOn('enableSecondText')).toEqual(true);
   });
+
+  it('should combine feature flags for the same package version', () => {
+    set({
+      enableFirstText: true,
+      enableSecondText: true,
+    });
+
+    expect(isOn('enableFirstText')).toEqual(true);
+    expect(isOn('enableSecondText')).toEqual(true);
+    expect(isOn('enableThirdText')).toEqual(false);
+
+    set({
+      enableThirdText: true,
+    });
+
+    expect(isOn('enableFirstText')).toEqual(true);
+    expect(isOn('enableSecondText')).toEqual(true);
+    expect(isOn('enableThirdText')).toEqual(true);
+  });
 });

@@ -36,7 +36,7 @@ const isOn = (key: string | null | undefined, debug?: boolean): boolean => {
  *
  */
 const set = (obj: FeatureToggleServiceConfig): void => {
-  settings[version] = obj;
+  settings[version] = Object.assign({}, settings[version], obj);
 };
 
 export { isOn, set };

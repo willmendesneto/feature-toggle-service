@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Updating bundle values for `yarn bundlesize` command
+- Combining feature flags per package version instead of overriding the previous values
 
 ## [5.0.1][] - 2020-05-13
 
