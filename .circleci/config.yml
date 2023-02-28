@@ -1,8 +1,8 @@
-version: 2
+version: 2.1
 
 docker_defaults: &docker_defaults
   docker:
-    - image: circleci/node:12.16.2-browsers
+    - image: cimg/node:14.20.0-browsers
   working_directory: ~/project/repo
 
 attach_workspace: &attach_workspace
@@ -15,16 +15,16 @@ install_steps: &install_steps
     - restore_cache:
         name: Restore node_modules cache
         keys:
-          - dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
+          - dependency-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
           - dependency-cache-{{ .Branch }}-
           - dependency-cache-
     - run:
         name: Installing Dependencies
         command: |
-          yarn install --silent --frozen-lockfile
+          npm ci
     - save_cache:
         name: Save node_modules cache
-        key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+        key: dependency-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
         paths:
           - node_modules/
     - persist_to_workspace:
@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Running unit tests
           command: |
-            sudo yarn test:ci
+            npm run test:ci
   bundle_size:
     <<: *docker_defaults
     steps:
@@ -65,13 +65,5 @@ jobs:
       - run:
           name: Checking bundle size
           command: |
-            sudo yarn build
-            sudo yarn bundlesize
-  # end_to_end:
-  #     <<: *docker_defaults
-  #     steps:
-  #         - *attach_workspace
-  #         - run:
-  #             name: Running E2E tests
-  #             command: |
-  #               sudo yarn e2e
+            npm run build
+            npm run bundlesize
