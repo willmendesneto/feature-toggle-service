@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+## [7.0.0][] - 2025-08-08
+
 ### Updated
 
 - Updating project to use NodeJS `v22.14.0`
@@ -109,6 +111,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v5.0.0...HEAD
 [5.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v5.0.0
 [unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v5.0.1...HEAD
-[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v6.1.0...HEAD
+[Unreleased]: https://github.com/willmendesneto/feature-toggle-service/compare/v7.0.0...HEAD
+[7.0.0]: https://github.com/willmendesneto/feature-toggle-service/compare/v6.1.0...v7.0.0
 [6.1.0]: https://github.com/willmendesneto/feature-toggle-service/compare/v6.0.0...v6.1.0
 [6.0.0]: https://github.com/willmendesneto/feature-toggle-service/tree/v6.0.0
