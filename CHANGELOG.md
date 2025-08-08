@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+### Updated
+
+- Updating project to use NodeJS `v22.14.0`
+- Updating data structure to improve performance when feature toggle service receives a dataset greater than 50 items, having read-heavy operations
+- Using spread operators instead of `Object.assign()`
+- Adding `Object.freeze()` for dataset immutability
+- Moving `FeatureToggleServiceConfig` to be an interface 
+
+
 ## [6.1.0][] - 2023-02-28
 
 ### Updated

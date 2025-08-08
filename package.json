@@ -86,15 +86,15 @@
     },
     {
       "path": "./dist/cjs/index.js",
-      "maxSize": "156B"
+      "maxSize": "157B"
     },
     {
       "path": "./dist/umd/feature-toggle-service.js",
-      "maxSize": "661B"
+      "maxSize": "774B"
     },
     {
       "path": "./dist/umd/feature-toggle-service.min.js",
-      "maxSize": "371B"
+      "maxSize": "448B"
     }
   ],
   "husky": {

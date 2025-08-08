@@ -1,10 +1,15 @@
-const version = '6.1.0';
+const version = '6.1.0' as const;
 
-export type FeatureToggleServiceConfig = {
-  [k: string]: boolean;
+export interface FeatureToggleServiceConfig {
+  readonly [key: string]: boolean;
+}
+
+const settings = new Map<string, FeatureToggleServiceConfig>();
+settings.set(version, Object.freeze({}));
+
+const getCurrentSettings = (): FeatureToggleServiceConfig => {
+  return settings.get(version) || Object.freeze({});
 };
-
-const settings: { [v: string]: FeatureToggleServiceConfig } = { [version]: {} };
 
 /**
  * Checks if Feature toggle/flag exists and it's on.
@@ -24,7 +29,13 @@ const isOn = (key: string | null | undefined, debug?: boolean): boolean => {
     )}
 `);
   }
-  return typeof key === 'string' && !!settings[version][key];
+
+  if (typeof key !== 'string' || (typeof key === 'string' && key.trim() === '')) {
+    return false;
+  }
+
+  const currentSettings = getCurrentSettings();
+  return Boolean(currentSettings[key]);
 };
 
 /**
@@ -36,7 +47,18 @@ const isOn = (key: string | null | undefined, debug?: boolean): boolean => {
  *
  */
 const set = (obj: FeatureToggleServiceConfig): void => {
-  settings[version] = Object.assign({}, settings[version], obj);
+  if (!obj || typeof obj !== 'object') {
+    return;
+  }
+
+  const currentSettings = getCurrentSettings();
+
+  const newSettings = Object.freeze({
+    ...currentSettings,
+    ...obj,
+  });
+
+  settings.set(version, newSettings);
 };
 
 export { isOn, set };
