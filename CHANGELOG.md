@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
+### Fixed
+
+- Fixing `settings` output when debugging
+
 ## [7.0.0][] - 2025-08-08
 
 ### Updated

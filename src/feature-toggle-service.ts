@@ -1,4 +1,4 @@
-const version = '7.0.0' as const;
+const version = '7.0.1' as const;
 
 export interface FeatureToggleServiceConfig {
   readonly [key: string]: boolean;
@@ -25,7 +25,7 @@ const isOn = (key: string | null | undefined, debug?: boolean): boolean => {
     // tslint:disable-next-line
     console.log(`
 [DEBUG] Execution Time in milliseconds: ${Date.now()} version: "${version}" key: "${key}" settings: ${JSON.stringify(
-      settings,
+      settings.get(version),
     )}
 `);
   }
