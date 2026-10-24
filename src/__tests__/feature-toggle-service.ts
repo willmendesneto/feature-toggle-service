@@ -7,12 +7,12 @@ const settings = {
 
 describe('FeatureToggleService', () => {
   beforeEach(() => {
-    jest.spyOn(console, 'log');
+    vi.spyOn(console, 'log').mockImplementation(() => {});
     set(settings);
   });
 
   afterEach(() => {
-    jest.resetAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('should return false if value is undefined or null', () => {
@@ -57,7 +57,7 @@ describe('FeatureToggleService', () => {
 
     expect(console.log).toHaveBeenCalledTimes(1);
 
-    const debugMessage = (console.log as any).mock.calls[0][0];
+    const debugMessage = vi.mocked(console.log).mock.calls[0][0];
     expect(debugMessage).toContain(`[DEBUG] Execution Time in milliseconds:`);
     expect(debugMessage).toContain(
       `version: "7.0.1" key: "${key}" settings: ${JSON.stringify({ ...settings, enableThirdText: true })}`,

@@ -15,9 +15,9 @@ Open an issue to report bugs or to propose new features.
 
 Pull requests are very welcome. Note that if you are going to propose drastic changes, be sure to open an issue for discussion first, to make sure that your PR will be accepted before you spend effort coding it.
 
-Fork the feature-toggle-service repository, clone it locally and create a branch for your proposed bug fix or new feature. Avoid working directly on the master branch.
+Fork the feature-toggle-service repository, clone it locally and create a branch for your proposed bug fix or new feature. Avoid working directly on the `main` branch.
 
-Implement your bug fix or feature, write tests to cover it and make sure all tests are passing (run a final `yarn test` to make sure everything is correct). Then commit your changes, push your bug fix/feature branch to the origin (your forked repo) and open a pull request to the upstream (the repository you originally forked)'s master branch.
+Implement your bug fix or feature, write tests to cover it and make sure all tests are passing (run a final `npm test` and `npm run lint` to make sure everything is correct). Then commit your changes, push your bug fix/feature branch to the origin (your forked repo) and open a pull request to the upstream (the repository you originally forked)'s `main` branch.
 
 ## Documentation
 
