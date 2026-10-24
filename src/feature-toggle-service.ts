@@ -1,4 +1,4 @@
-const version = '7.0.1' as const;
+const version = '8.0.0' as const;
 
 export interface FeatureToggleServiceConfig {
   readonly [key: string]: boolean;

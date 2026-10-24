@@ -60,7 +60,7 @@ describe('FeatureToggleService', () => {
     const debugMessage = vi.mocked(console.log).mock.calls[0][0];
     expect(debugMessage).toContain(`[DEBUG] Execution Time in milliseconds:`);
     expect(debugMessage).toContain(
-      `version: "7.0.1" key: "${key}" settings: ${JSON.stringify({ ...settings, enableThirdText: true })}`,
+      `version: "8.0.0" key: "${key}" settings: ${JSON.stringify({ ...settings, enableThirdText: true })}`,
     );
   });
 });
