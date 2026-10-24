@@ -21,8 +21,7 @@ const getCurrentSettings = (): FeatureToggleServiceConfig => {
  *
  */
 const isOn = (key: string | null | undefined, debug?: boolean): boolean => {
-  if (!!debug) {
-    // tslint:disable-next-line
+  if (debug) {
     console.log(`
 [DEBUG] Execution Time in milliseconds: ${Date.now()} version: "${version}" key: "${key}" settings: ${JSON.stringify(
       settings.get(version),
