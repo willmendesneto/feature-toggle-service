@@ -7,34 +7,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
-### Breaking Changes
-
-- Package files moved: `dist/index.mjs` (ESM), `dist/index.js` (CJS) and `dist/umd/*`. Deep imports from `dist/cjs`, `dist/esm` and `dist/es2015` no longer work; the package entry point is defined via `exports`
-- UMD build targets ES2018 (Internet Explorer is no longer supported)
-- Requiring Node.js >= 18
-
-### Fixed
-
-- UMD build required a global `tslib` (`window.tslib`), so `set()` threw a `TypeError` when loaded via `<script>`. It's self-contained now
-- ESM build was not reachable from Node.js, since the package had no `exports`
-- Published package included non-runtime files (`greenkeeper.json`, `contributing.md`, gzip files)
-- README described a `NODE_ENV` check for `debug` that doesn't exist
-
-### Updated
-
-- Zero runtime dependencies (`tslib` removed)
-- Building ESM, CJS and UMD with tsdown, with per-condition type declarations
-- Migrating from Jest to Vitest + Vite
-- Migrating to ESLint 9 flat config, typescript-eslint 8, Prettier 3 and TypeScript 6
-- Migrating from Circle CI to Github Actions, testing Node 22/24
-- Adding package checks: `lint:package` (publint + arethetypeswrong), `size` (size-limit) and `test:smoke` (ESM, CJS and UMD)
-- Removing yarn instructions, perf-marks leftovers, Greenkeeper, Coveralls config, bundlesize, husky and lint-staged
-- Updating `.nvmrc` to Node.js 24
-
-### Security
-
-- Removing `.coveralls.yml`, which contained the Coveralls repo token
-
 ## [7.0.1][] - 2025-08-08
 
 ### Fixed

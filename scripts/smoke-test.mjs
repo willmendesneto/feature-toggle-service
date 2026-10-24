@@ -33,11 +33,15 @@ try {
     'ESM',
     `
     import assert from 'node:assert/strict';
-    import { isOn, set } from 'feature-toggle-service';
+    import { createFeatureToggleService, isOn, set } from 'feature-toggle-service';
 
     set({ enabled: true, disabled: false });
     assert.equal(isOn('enabled'), true);
     assert.equal(isOn('disabled'), false);
+
+    const service = createFeatureToggleService({ enabled: false });
+    assert.equal(service.isOn('enabled'), false);
+    assert.equal(isOn('enabled'), true);
     `,
   );
 
@@ -60,10 +64,11 @@ try {
     // No `module`, `exports` or `define`, like a browser page
     const window = { console };
     vm.runInNewContext(code, Object.assign(window, { self: window, globalThis: window }));
-    const { isOn, set } = window.FeatureToggleService;
+    const { createFeatureToggleService, isOn, set } = window.FeatureToggleService;
     set({ enabled: true });
     assert.equal(isOn('enabled'), true);
     assert.equal(isOn('missing'), false);
+    assert.equal(createFeatureToggleService({ enabled: false }).isOn('enabled'), false);
   }
 
   console.log('\n✔ Smoke test passed');

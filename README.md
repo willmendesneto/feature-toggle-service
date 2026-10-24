@@ -87,6 +87,27 @@ Adds the feature toggle configuration in your application. This information will
 
 Checks if the feature toggle configuration has the string key value with `true` value. For bundle reasons if you want to check if the feature toggle is turned off, please use `!featureToggleService.isOn(key)`. When `debug` param is passed as `true`, it prints configuration, version and settings for debug purposes
 
+### `createFeatureToggleService(initialConfig)`
+
+Creates an isolated service with its own configuration. Use it when the global configuration shared by `set()`/`isOn()` is not enough, e.g. one service per server request (so toggles don't leak between users) or per React tree.
+
+```js
+import { createFeatureToggleService } from 'feature-toggle-service';
+
+const featureToggles = createFeatureToggleService({ enableNewHeader: true });
+
+featureToggles.isOn('enableNewHeader'); // true
+featureToggles.set({ enableBetaArea: true }); // merged with the current configuration
+featureToggles.getAll(); // { enableNewHeader: true, enableBetaArea: true }
+
+// Notified every time the configuration changes
+const unsubscribe = featureToggles.subscribe(() => {
+  console.log(featureToggles.getAll());
+});
+```
+
+`getAll()` returns a frozen object that keeps the same reference until the configuration changes, so `subscribe` and `getAll` can be used with React's `useSyncExternalStore`.
+
 ## Publish
 
 this project is using `np` package to publish, which makes things straightforward. EX: `np <patch|minor|major>`
